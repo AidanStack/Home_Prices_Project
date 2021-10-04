@@ -1,2 +1,4 @@
-# Home_Prices_Project
+# Home Price Analysis Project
+
+Contributors: Jeff Marvel, Aidan Stack, and Teigen Olson
  
