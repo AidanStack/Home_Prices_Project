@@ -3,9 +3,11 @@ from scipy import stats
 import pandas as pd
 import numpy as np
 import sklearn.metrics as metrics
+from statsmodels.formula.api import ols
+import statsmodels.api as sm
+
 
 def run_model(df_train, df_test, cols):
-    from statsmodels.formula.api import ols
     
     X_train = df_train.loc[:,cols]
     X_test = df_test.loc[:,cols]
@@ -21,9 +23,8 @@ def run_model(df_train, df_test, cols):
 
 
 def evaluate_model(df_train, df_test, cols):
-    import statsmodels.api as sm
 
-    model, train_preds, test_preds = run_model(df_train, df_test, ['sqft_living'])
+    model, train_preds, test_preds = run_model(df_train, df_test, cols)
     
     y_train = df_train['price']
     y_test = df_test['price']
