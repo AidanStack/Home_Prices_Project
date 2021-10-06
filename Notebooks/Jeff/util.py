@@ -19,12 +19,8 @@ def run_model(df_train, df_test, cols, log_price):
     
     model = ols(formula=formula, data=df_train).fit()
     
-    if log_price == True:
-        train_preds = np.exp(model.predict(X_train))
-        test_preds = np.exp(model.predict(X_test))
-    else:
-        train_preds = model.predict(X_train)
-        test_preds = model.predict(X_test)
+    train_preds = model.predict(X_train)
+    test_preds = model.predict(X_test)
         
     return model, train_preds, test_preds
 
@@ -33,20 +29,36 @@ def evaluate_model(df_train, df_test, cols, log_price):
 
     model, train_preds, test_preds = run_model(df_train, df_test, cols, log_price)
     
-    y_train = df_train['price']
-    y_test = df_test['price']
+    if log_price == True:
+        y_train = df_train['price_log']
+        y_test = df_test['price_log']
+    else:
+        y_train = df_train['price']
+        y_test = df_test['price']
     
     train_residuals = y_train - train_preds
     test_residuals = y_test - test_preds
     
+    # Unlog predictions for calculating MSE and MAE
+    if log_price == True:
+        train_preds_ul = np.exp(train_preds)
+        test_preds_ul = np.exp(test_preds)
+        y_train_ul = np.exp(y_train)
+        y_test_ul = np.exp(y_test)
+    else:
+        train_preds_ul = train_preds
+        test_preds_ul = test_preds
+        y_train_ul = y_train
+        y_test_ul = y_test
+    
     print(f"Train R2: {metrics.r2_score(y_train, train_preds):.3f}")
     print(f"Test R2: {metrics.r2_score(y_test, test_preds):.3f}")
     print("****")
-    print(f"Train RMSE: {metrics.mean_squared_error(y_train, train_preds, squared=False):,.0f}")
-    print(f"Test RMSE: {metrics.mean_squared_error(y_test, test_preds, squared=False):,.0f}")
+    print(f"Train RMSE: {metrics.mean_squared_error(y_train_ul, train_preds_ul, squared=False):,.0f}")
+    print(f"Test RMSE: {metrics.mean_squared_error(y_test_ul, test_preds_ul, squared=False):,.0f}")
     print("****")
-    print(f"Train MAE: {metrics.mean_absolute_error(y_train, train_preds):,.0f}")
-    print(f"Test MAE: {metrics.mean_absolute_error(y_test, test_preds):,.0f}\n")
+    print(f"Train MAE: {metrics.mean_absolute_error(y_train_ul, train_preds_ul):,.0f}")
+    print(f"Test MAE: {metrics.mean_absolute_error(y_test_ul, test_preds_ul):,.0f}\n")
     
     
     # Plot the residuals
