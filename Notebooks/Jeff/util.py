@@ -7,7 +7,7 @@ from statsmodels.formula.api import ols
 import statsmodels.api as sm
 
 
-def run_model(df_train, df_test, cols):
+def run_model(df_train, df_test, cols, log_price):
     
     X_train = df_train.loc[:,cols]
     X_test = df_test.loc[:,cols]
@@ -22,7 +22,7 @@ def run_model(df_train, df_test, cols):
     return model, train_preds, test_preds
 
 
-def evaluate_model(df_train, df_test, cols):
+def evaluate_model(df_train, df_test, cols, log_price):
 
     model, train_preds, test_preds = run_model(df_train, df_test, cols)
     
