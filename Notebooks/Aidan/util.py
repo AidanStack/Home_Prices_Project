@@ -23,7 +23,7 @@ def run_model(df_train, df_test, cols):
 def evaluate_model(df_train, df_test, cols):
     import statsmodels.api as sm
 
-    model, train_preds, test_preds = run_model(df_train, df_test, ['sqft_living'])
+    model, train_preds, test_preds = run_model(df_train, df_test, cols)
     
     y_train = df_train['price']
     y_test = df_test['price']
