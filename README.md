@@ -37,3 +37,9 @@ Contributors: Jeff Marvel, Aidan Stack, and Teigen Olson
 ## Possible Next Steps
 
  While valuable, these recommendations could be improved by somehow incorporating a profitability element, as that angle is missing from our current analysis. 
+ 
+## Presentation Link 
+
+https://docs.google.com/presentation/d/13v98uOOZorAmWhyX4-hHCPyzTjhpOGaw1-9PSgU2f5s/edit?usp=sharing
+
+
