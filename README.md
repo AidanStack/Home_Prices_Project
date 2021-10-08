@@ -2,11 +2,11 @@
 
 Contributors: Jeff Marvel, Aidan Stack, and Teigen Olson
  
-## Business Problem 
+# Business Problem 
 
  Our client is a small real estate developer looking to evaluate the viability of different projects around Seattle. To assist this effort, our team used multiple linear regression modelling to help estimate home prices, and determine which factors were the most influential on price. 
  
-# Repository Structure 
+## Repository Structure 
  Data - All relevant datasets
  Notebooks - Our individual data prep and explorations 
  Tin_final_analysis - The final and completed notebook, combing all of our models and processing steps
