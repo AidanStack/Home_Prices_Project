@@ -32,7 +32,7 @@ Contributors: Jeff Marvel, Aidan Stack, and Teigen Olson
 
 ## Key Takeaways 
 
- The old real-estate mantra 'location, location, location' holds true in our dataset. Zipcode and neighborhood served as our strongest predictors of overall home price. We also found that when a house takes up too much of the lot it is on, price drops. So while increases in square footage does increase price, the developer should be careful to not consume too much of the lot with living space. More bathrooms also significantly increases home price when compared to other factors. These findings combine to a global recommendation to find small homes, in premium neighborhoods, that can either be rennovated or expanded slightly. 
+ The old real-estate mantra 'location, location, location' holds true in our dataset. Zipcode and neighborhood served as some of our strongest predictors of overall home price. We also found that when a house takes up too much of the lot it is on, price drops. So while increases in square footage does increase price, the developer should be careful to not consume too much of the lot with living space. More bathrooms also significantly increases home price when compared to other factors. These findings combine to a global recommendation to find small homes, in premium neighborhoods, that can either be rennovated or expanded slightly. 
  
 ## Possible Next Steps
 
