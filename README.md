@@ -1,4 +1,4 @@
-#King County Home Price Analysis 
+# King's County Home Price Analysis 
 
 Contributors: Jeff Marvel, Aidan Stack, and Teigen Olson
  
